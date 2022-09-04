@@ -6,7 +6,7 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager Instance = null;
 
-     public PlayerSetting PlayerSetting = null;
+    public PlayerSetting PlayerSetting = null;
 
     private void Awake()
     {
