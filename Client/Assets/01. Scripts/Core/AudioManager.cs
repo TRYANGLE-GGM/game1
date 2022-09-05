@@ -30,6 +30,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// _player의 오디오 소스에 _clipName 으로 된 클립 실행
+    /// </summary>
+    /// <param name="_clipName">실행할 클립 이름</param>
+    /// <param name="_player">클립을 실행시킬 오디오 소스</param>
     public void Play(string _clipName, AudioSource _player)
     {
         _player.volume = DataManager.Instance.PlayerSetting.volume;
@@ -39,6 +44,10 @@ public class AudioManager : MonoBehaviour
         _player.Play();
     }
 
+    /// <summary>
+    /// _player의 오디오 소스의 플레이를 일시정지
+    /// </summary>
+    /// <param name="_player">실행을 멈출 오디오 소스</param>
     public void Pause(AudioSource _player)
     {
         _player.Pause();

@@ -41,6 +41,10 @@ public class PoolManager : MonoBehaviour
         pools.Add(_prefab.name, pool);
     }
 
+    /// <summary>
+    /// 타겟 _obj를 삭제
+    /// </summary>
+    /// <param name="_obj">타겟 오브젝트</param>
     public void Push(PoolableMono _obj)
     {
         if(!pools.ContainsKey(_obj.name))
@@ -52,6 +56,11 @@ public class PoolManager : MonoBehaviour
         pools[_obj.name].Push(_obj);
     }
 
+    /// <summary>
+    /// _prefabName으로 된 이름의 프리팹 소환
+    /// </summary>
+    /// <param name="_prefabName">소환할 프리팹 이름</param>
+    /// <returns>소환된 PoolableMono</returns>
     public PoolableMono Pop(string _prefabName)
     {
         if(!pools.ContainsKey(_prefabName))
