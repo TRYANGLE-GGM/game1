@@ -10,8 +10,16 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance != null) { Debug.LogWarning("Multiple " + this.GetType() + " is Running, Destroy This"); Destroy(gameObject); }
-        else { Instance = this; DontDestroyOnLoad(transform.root.gameObject); }
+        if (Instance != null)
+        {
+            Debug.LogWarning("Multiple " + this.GetType() + " is Running, Destroy This");
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(transform.root.gameObject);
+        }
 
         if(!TryReadJson<PlayerSetting>(out PlayerSetting))
             PlayerSetting = new PlayerSetting(0.5f);

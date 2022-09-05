@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 [System.Serializable]
 public class PlayerSetting
 {
-    [JsonProperty("volume")] public float volume;
+    [Range(0f, 1f), JsonProperty("volume")] public float volume;
 
     public PlayerSetting(float _volume)
     {

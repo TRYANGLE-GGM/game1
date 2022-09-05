@@ -10,8 +10,16 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance != null) { Debug.LogWarning("Multiple " + this.GetType() + " is Running, Destroy This"); Destroy(gameObject); }
-        else { Instance = this; DontDestroyOnLoad(transform.root.gameObject); }
+        if (Instance != null)
+        {
+            Debug.LogWarning("Multiple " + this.GetType() + " is Running, Destroy This");
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(transform.root.gameObject);
+        }
 
         foreach(AudioClip ac in clipList)
         {
